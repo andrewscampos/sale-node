@@ -1,5 +1,5 @@
 {
-    "workflowApiVersion": "1.0",
+    "workflowApiVersion": "2.0",
     "metaData": {
        "icon": "images/icon.png",
        "iconSmall": "images/iconSmall.png",
@@ -20,7 +20,9 @@
 		"title": "",
                 "message": "",
                 "categoria":"",
-		"customerId" : "{{Contact.key}}"
+                "rastreamento":"",
+                "shortMessage":"",
+				"customerId" : "{{Contact.key}}"
             }],
             "outArguments": [
                 { "status":"String" }
@@ -79,8 +81,8 @@
     ],
     "userInterfaces": {
        "configModal": {
-           "height": 440,
-           "width": 520,
+           "height": 500,
+           "width": 600,
            "fullscreen": false
        }
     },
