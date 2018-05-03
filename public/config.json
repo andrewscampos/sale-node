@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "PinePush",
+           "name": "PinePush DEV",
            "description": "Aplicativo personalizado por banco pine."
        }
     },
@@ -79,8 +79,8 @@
     ],
     "userInterfaces": {
        "configModal": {
-           "height": 450,
-           "width": 520,
+           "height": 550,
+           "width": 570,
            "fullscreen": false
        }
     },
