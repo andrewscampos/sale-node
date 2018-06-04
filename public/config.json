@@ -37,7 +37,7 @@
     "configurationArguments": {
       "applicationExtensionKey": "eaf1a313-ee7f-4277-83ea-b089d62d4f7e",
        "save": {
-            "url": "https://gateway.pine.com/api/prd/pineonline/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -46,7 +46,7 @@
             "timeout": 10000
        },
        "validate": {
-            "url": "https://gateway.pine.com/api/prd/pineonline/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -55,7 +55,7 @@
             "timeout": 10000
        },
        "publish": {
-            "url": "https://gateway.pine.com/api/prd/pineonline/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -64,7 +64,7 @@
             "timeout": 10000
        },
        "stop": {
-            "url": "https://gateway.pine.com/api/prd/pineonline/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
             "verb": "POST",
             "body": "",
             "header": "",
