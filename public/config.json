@@ -18,14 +18,14 @@
 				"email": "{{InteractionDefaults.Email}}",
 				"type": "",
 				"title": "",
-                "message": "",
-                "categoria":"",
+                		"message": "",
+                		"categoria":"",
 				"customerId" : "{{Contact.key}}"
             }],
             "outArguments": [
                 { "status":"String" }
             ],
-            "url": "https://gateway.pineonline.com.br/salesforce/v1/api/notification/send?gw-app-key=416cf720c6230134b9b4021e75abe44c",
+            "url": "https://gateway.pine.com/api/prd/pineonline/push/send",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -37,8 +37,8 @@
     "configurationArguments": {
       "applicationExtensionKey": "eaf1a313-ee7f-4277-83ea-b089d62d4f7e",
        "save": {
-        "url": "https://gateway.pineonline.com.br/salesforce/v1/api/notification/status?gw-app-key=416cf720c6230134b9b4021e75abe44c",
-        "verb": "POST",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
@@ -46,8 +46,8 @@
             "timeout": 10000
        },
        "validate": {
-        "url": "https://gateway.pineonline.com.br/salesforce/v1/api/notification/status?gw-app-key=416cf720c6230134b9b4021e75abe44c",
-        "verb": "POST",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
@@ -55,8 +55,8 @@
             "timeout": 10000
        },
        "publish": {
-        "url": "https://gateway.pineonline.com.br/salesforce/v1/api/notification/status?gw-app-key=416cf720c6230134b9b4021e75abe44c",
-        "verb": "POST",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
@@ -64,8 +64,8 @@
             "timeout": 10000
        },
        "stop": {
-        "url": "https://gateway.pineonline.com.br/salesforce/v1/api/notification/status?gw-app-key=416cf720c6230134b9b4021e75abe44c",
-        "verb": "POST",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
