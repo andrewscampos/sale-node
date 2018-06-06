@@ -14,12 +14,14 @@
     },
       "arguments": {
         "execute": {
-            "inArguments": [{
+             "inArguments": [{
 				"email": "{{InteractionDefaults.Email}}",
 				"type": "",
 				"title": "",
-                		"message": "",
-                		"categoria":"",
+				"message": "",
+				"categoria":"",
+				"rastreamento":"",
+				"shortMessage":"",
 				"customerId" : "{{Contact.key}}"
             }],
             "outArguments": [
