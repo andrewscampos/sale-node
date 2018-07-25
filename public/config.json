@@ -25,7 +25,7 @@
 				"customerId" : "{{Contact.key}}"
             }],
             "outArguments": [
-                { "foundSignupDate":"" }
+                { "status":"" }
             ],
             "url": "https://gateway.pine.com/api/prd/pineonline/push/send",
             "verb": "POST",
@@ -100,7 +100,7 @@
                 ],
                 "outArguments": [
                     {
-                        "foundSignupDate": {
+                        "status": {
                             "dataType": "Text",
                             "direction": "out",
                             "access": "visible"
