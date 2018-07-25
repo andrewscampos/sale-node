@@ -28,7 +28,7 @@
                     "status": ""
                 }
             ],
-            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/send"
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/send"
         }
     },
     "configurationArguments": {
