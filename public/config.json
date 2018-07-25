@@ -23,24 +23,24 @@
             ],
             "outArguments": [
                 {
-                    "foundSignupDate": ""
+                    "status": ""
                 }
             ],
-            "url": "https://some-endpoint.com/execute"
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/send"
         }
     },
     "configurationArguments": {
        "save": {
-           "url": "URI/for/your/activity/save"
+           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status"
        },
        "publish": {
-           "url": "URI/for/your/activity/publish"
+           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status"
        },
        "validate": {
-           "url": "URI/for/your/activity/validate"
+           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status"
        },
        "stop": {
-           "url": "URI/for/your/activity/stop"
+           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status"
        }
     },
     "wizardSteps": [
@@ -77,8 +77,8 @@
                 ],
                 "outArguments": [
                     {
-                        "foundSignupDate": {
-                            "dataType": "Date",
+                        "status": {
+                            "dataType": "Text",
                             "direction": "out",
                             "access": "visible"
                         }
