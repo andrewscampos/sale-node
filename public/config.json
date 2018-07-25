@@ -20,14 +20,13 @@
 				"title": "",
                 "message": "",
                 "categoria":"",
-		"customerId" : "{{Contact.key}}"
+		        "customerId" : "{{Contact.key}}"
             }],
             "outArguments": [{
-		"resultCode": "String",
-		"resultMessage": "String",
-		"resultData": "String"
-		}
-            ],
+                "resultCode": "String",
+                "resultMessage": "String",
+                "resultData": "String"
+		    }],
             "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/send",
             "verb": "POST",
             "body": "",
@@ -101,8 +100,18 @@
                 ],
                 "outArguments": [
                     {
-                        "foundSignupDate": {
-                            "dataType": "Text",
+                        "resultCode": {
+                            "dataType": "String",
+                            "direction": "out",
+                            "access": "visible"
+                        },
+                        "resultMessage": {
+                            "dataType": "String",
+                            "direction": "out",
+                            "access": "visible"
+                        },
+                        "resultData": {
+                            "dataType": "String",
                             "direction": "out",
                             "access": "visible"
                         }
