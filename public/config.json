@@ -33,16 +33,16 @@
     },
     "configurationArguments": {
        "save": {
-           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status"
+           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
        },
        "publish": {
-           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status"
+           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
        },
        "validate": {
-           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status"
+           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
        },
        "stop": {
-           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status"
+           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
        }
     },
     "wizardSteps": [
