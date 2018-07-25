@@ -27,7 +27,7 @@
             "outArguments": [
                 { "status":"String" }
             ],
-            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/send",
             "verb": "POST",
             "body": "",
             "header": "",
