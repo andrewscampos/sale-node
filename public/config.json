@@ -1,62 +1,89 @@
 {
-    "workflowApiVersion": "1.1",
+    "workflowApiVersion": "1.0",
     "metaData": {
-       "icon": "images/sms.png",
+       "icon": "images/icon.png",
+       "iconSmall": "images/iconSmall.png",
        "category": "message"
     },
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "REST Activity (Workflow API v1.1)",
-           "description": "An example REST activity using workflow API v1.1 format."
+           "name": "PinePush",
+           "description": "Aplicativo personalizado por banco pine."
        }
     },
-    "arguments": {
+      "arguments": {
         "execute": {
-            "inArguments": [
-                {
-                    "emailAddress": "{{InteractionDefaults.Email}}",
-                    "customerId": "03977715682"
-                },
-                {
-                    "phoneNumber": "{{Contact.Default.PhoneNumber}}",
-                    "customerId": "03977715682"
-                }
-            ],
+             "inArguments": [{
+				"email": "{{InteractionDefaults.Email}}",
+				"type": "",
+				"title": "",
+				"message": "",
+				"categoria":"",
+				"rastreamento":"",
+				"shortMessage":"",
+				"customerId" : "{{Contact.key}}"
+            }],
             "outArguments": [
-                {
-                    "status": ""
-                }
+                { "status":"String" }
             ],
-            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/send"
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 10000
         }
     },
     "configurationArguments": {
-       "applicationExtensionKey": "eaf1a313-ee7f-4277-83ea-b089d62d4f7e",
+      "applicationExtensionKey": "eaf1a313-ee7f-4277-83ea-b089d62d4f7e",
        "save": {
-           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
-       },
-       "publish": {
-           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 10000
        },
        "validate": {
-           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 10000
+       },
+       "publish": {
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 10000
        },
        "stop": {
-           "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 10000
        }
     },
     "wizardSteps": [
-       { "label": "Step 1", "key": "step1" },
-       { "label": "Step 2", "key": "step2" },
-       { "label": "Step 3", "key": "step3" },
-       { "label": "Step 4", "key": "step4", "active": false }
+       { "label": "Step 1", "key": "step1" }
+       
     ],
     "userInterfaces": {
        "configModal": {
-           "height": 200,
-           "width": 300,
-           "fullscreen": true
+           "height": 500,
+           "width": 600,
+           "fullscreen": false
        }
     },
     "schema": {
@@ -64,26 +91,8 @@
             "execute": {
                 "inArguments": [
                     {
-                        "phoneNumber": {
-                            "dataType": "Phone",
-                            "isNullable": false,
-                            "direction": "in"   
-                        },
-                        "customerId": {
-                            "dataType": "Text",
-                            "isNullable": false,
-                            "direction": "in"
-                        }
-
-                    },
-                    {
                         "emailAddress": {
                             "dataType": "Email",
-                            "isNullable": false,
-                            "direction": "in"
-                        },
-                        "customerId": {
-                            "dataType": "Text",
                             "isNullable": false,
                             "direction": "in"
                         }
@@ -91,7 +100,7 @@
                 ],
                 "outArguments": [
                     {
-                        "status": {
+                        "foundSignupDate": {
                             "dataType": "Text",
                             "direction": "out",
                             "access": "visible"

@@ -1,31 +1,52 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Custom Journey Builder Activity</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Custom Journey Builder Activity v1.3</title>
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/require.js"></script>
-    <script type="text/javascript">
-        (function() {
-            var config = {
-                baseUrl: ''
-            };
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/require.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            function hideTitle(){
+                var type = $('#type').val();
+                if(type == "SMS"){
+                 //   $('#title').hide();
+                   // $('#tituloLabel').hide();
+                    $('#labalParaPush').hide();
+                    
+                }else{
+                 //   $('#title').show();
+                //    $('#tituloLabel').show();
+                    $('#labalParaPush').show();
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            (function() {
+                var config = {
+                    baseUrl: ''
+                };
+                var dependencies = [
+                    'customActivity'
+                ];
+                require(config, dependencies);
+            })();
+        </script>
 
-            var dependencies = [
-                'customActivity'
-            ];
-
-            require(config, dependencies);
-        })();
-    </script>
-
-    <!--Styles-->
-    <style type="text/css">
+        <style type="text/css">
         body {
-            padding: 20px;
+            padding: 15px;
             margin: 0;
+            font-size: 11px;
+            color: #16325c;
+            font-family: "Salesforce Sans", Arial, sans-serif;
         }
         .step {
             display: none;
@@ -33,31 +54,90 @@
         #step1 {
             display: block;
         }
+        input {
+            font-family: inherit;
+            display: block;
+            padding: 4px 5px;
+            font-size: 11px;
+            color: #16325c;
+            background-color: #ffffff;
+            background-image: none;
+            border: 1px solid #d8dde6;
+            border-radius: 0.25rem;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        input[type=text] {
+            
+            margin-bottom: 10px;
+        }
+        .inputLabel {
+            margin-bottom: 5px;
+            font-size: 8pt;
+            color: #808080;
+            text-transform: uppercase;
+        }
     </style>
 
-</head>
-<body>
-<div id="step1" class="step">
-
-    Select your SMS message:
-    <select id="select1">
-        <option value="">Select an option</option>
-        <option value="someMessage">Some SMS</option>
-        <option value="anotherMessage">Another SMS</option>
-        <option value="thirdMessage">Third SMS</option>
-        <option value="unknownMessage">Unknown SMS</option>
-    </select>
-
-    <button id="toggleLastStep">Toggle Last Step</button>
-</div>
-<div id="step2" class="step">
-    Here's a second page with some info on it.
-</div>
-<div id="step3" class="step">
-    You chose the message: <div id="message"></div>
-</div>
-<div id="step4" class="step">
-    Hey, here's a fourth step, just for you.  Toggle this on or off from step 1.
-</div>
-</body>
+    </head>
+    <body>
+        <div id="step1" class="step form-group">
+            <div>
+                <h4> 
+                    <p id="erroMsg" style="color:red"></p>
+                </h4> 
+            </div>
+			<p>Por favor informe os campos abaixo.</p>
+            <div class="row">
+                <div class="col-xs-4">
+                    <p class="inputLabel">Tipo de Notificação</p>
+                    <select id="type" onchange="hideTitle()" class="form-control">
+                        <option value="PUSH">PUSH</option>
+                        <option value="SMS">SMS</option>
+                    </select>
+                </div>
+                <div class="col-xs-4">
+                    <p class="inputLabel">Tipo de Categoria</p>
+                    <select id="categoria" class="form-control" >
+                        <option value="">Sem categoria</option>
+                        <option value="TRANSFERS">Transferências</option>
+                        <option value="INVESTMENTS">Investimentos</option>
+                        <option value="CASH_OUT">Resgate</option>
+                        <option value="REGISTRATION_DATA">Cadastro</option>
+                        <option value="OFFERS_PROMOTIONS">Ofertas e promoções</option>
+                    </select>
+                </div>
+                <div class="col-xs-4">
+                    <p class="inputLabel" id="tituloLabel">Rastreamento ( opcional )</p>
+                    <input id="rastreamento" class="form-control"  placeholder="Rastrear os envios - máx. 100" type="text" minlength="1" maxlength="100" autocomplete="on" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p id="labalParaPush">Push - Prioridade do envio é sempre para push caso esteja desabilitado o cliente recebera um sms.</p>
+                </div>
+            </div>
+            <p class="inputLabel" id="tituloLabel">Titulo ( Só aparece quando for PUSH ) ( Obrigatório )</p>
+            <div class="row">
+            <div class="col-md-12">
+                <input id="title" class="form-control"  placeholder="Título que será apresentado na notificação - máx. 20" type="text" required="required" maxlength="20" autocomplete="on" />
+            </div>
+            </div>
+            <p class="inputLabel" id="tituloLabel">Mensagem do Push ou do SMS ( Obrigatório )</p>
+            <div class="row">
+            <div class="col-md-12">
+                <input id="shortMessage" class="form-control"  placeholder="Mensagem que será apresentado na notificação ou no SMS- máx. 120" type="text" required="required" minlength="1" maxlength="120" autocomplete="on" />
+            </div>
+            </div>
+            <p class="inputLabel">Mensagem do detalhe ( opcional )</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea rows="7" id="message" class="form-control" placeholder="Conteúdo da mensagem - máx. 400" type="text" required="required" maxlength="400" autocomplete="on" ></textarea>
+                    <br />
+                    <p>Essa mensagem aparece quando o cliente abre os detalhes na tela de notificações dentro do aplicativo!</p>
+                </div>
+            </div>
+            <p>* Caso o cliente opte por não receber comunicação com determinada categoria essa notificação não sera enviada nem por PUSH nem por SMS!</p>
+        </div>
+    </body>
 </html>
