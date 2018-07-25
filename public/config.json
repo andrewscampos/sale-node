@@ -20,10 +20,13 @@
 				"title": "",
                 "message": "",
                 "categoria":"",
-				"customerId" : "{{Contact.key}}"
+		"customerId" : "{{Contact.key}}"
             }],
-            "outArguments": [
-                { "status":"String" }
+            "outArguments": [{
+		"resultCode": "String",
+		"resultMessage": "String",
+		"resultData": "String"
+		}
             ],
             "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/send",
             "verb": "POST",
