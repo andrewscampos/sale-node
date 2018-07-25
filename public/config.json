@@ -15,10 +15,12 @@
         "execute": {
             "inArguments": [
                 {
-                    "emailAddress": "{{InteractionDefaults.Email}}"
+                    "emailAddress": "{{InteractionDefaults.Email}}",
+                    "customerId": "03977715682"
                 },
                 {
-                    "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+                    "phoneNumber": "{{Contact.Default.PhoneNumber}}",
+                    "customerId": "03977715682"
                 }
             ],
             "outArguments": [
@@ -65,11 +67,22 @@
                             "dataType": "Phone",
                             "isNullable": false,
                             "direction": "in"   
+                        },
+                        "customerId": {
+                            "dataType": "Text",
+                            "isNullable": false,
+                            "direction": "in"
                         }
+
                     },
                     {
                         "emailAddress": {
                             "dataType": "Email",
+                            "isNullable": false,
+                            "direction": "in"
+                        },
+                        "customerId": {
+                            "dataType": "Text",
                             "isNullable": false,
                             "direction": "in"
                         }
