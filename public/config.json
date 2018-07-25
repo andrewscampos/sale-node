@@ -32,6 +32,7 @@
         }
     },
     "configurationArguments": {
+       "applicationExtensionKey": "eaf1a313-ee7f-4277-83ea-b089d62d4f7e",
        "save": {
            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status"
        },
