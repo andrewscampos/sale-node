@@ -26,8 +26,7 @@
             }],
             "outArguments": [
                 { 
-                  "status":"String",
-                  "status1":"String"
+                  "status":"String"
                 }
             ],
             "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/send",
@@ -103,11 +102,6 @@
                 "outArguments": [
                     {
                         "status": {
-                            "dataType": "Text",
-                            "direction": "out",
-                            "access": "visible"
-                        },
-                        "status1": {
                             "dataType": "Text",
                             "direction": "out",
                             "access": "visible"
