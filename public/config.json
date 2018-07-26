@@ -25,7 +25,10 @@
 				"customerId" : "{{Contact.key}}"
             }],
             "outArguments": [
-                { "status":"String" }
+                { 
+                  "resultCode":"String",
+                  "resultData":"String" 
+                }
             ],
             "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/send",
             "verb": "POST",
@@ -39,7 +42,7 @@
     "configurationArguments": {
       "applicationExtensionKey": "eaf1a313-ee7f-4277-83ea-b089d62d4f7e",
        "save": {
-            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -48,7 +51,7 @@
             "timeout": 10000
        },
        "validate": {
-            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -57,7 +60,7 @@
             "timeout": 10000
        },
        "publish": {
-            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -66,7 +69,7 @@
             "timeout": 10000
        },
        "stop": {
-            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/status",
+            "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/customers/status",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -77,7 +80,6 @@
     },
     "wizardSteps": [
        { "label": "Step 1", "key": "step1" }
-       
     ],
     "userInterfaces": {
        "configModal": {
@@ -91,7 +93,7 @@
             "execute": {
                 "inArguments": [
                     {
-                        "emailAddress": {
+                        "email": {
                             "dataType": "Email",
                             "isNullable": false,
                             "direction": "in"
@@ -100,11 +102,17 @@
                 ],
                 "outArguments": [
                     {
-                        "foundSignupDate": {
+                        "resultCode": {
+                            "dataType": "Text",
+                            "direction": "out",
+                            "access": "visible"
+                        },
+                        "resultData": {
                             "dataType": "Text",
                             "direction": "out",
                             "access": "visible"
                         }
+
                     }
                 ]
             }
