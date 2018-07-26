@@ -18,9 +18,7 @@ define(function (require) {
         if (data) {
             payload = data;
         }
-        var message = '';
-        var title = '';
-
+        
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
