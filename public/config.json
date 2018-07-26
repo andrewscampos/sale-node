@@ -27,7 +27,8 @@
             "outArguments": [
                 { 
                   "resultCode":"String",
-                  "resultData":"String" 
+                  "resultData":"String",
+                  "resultMessage":"String"
                 }
             ],
             "url": "https://afpnhhgtw01.pine.com:8443/api/dev/pineonline/web/push/send",
@@ -111,7 +112,14 @@
                             "dataType": "Text",
                             "direction": "out",
                             "access": "visible"
+                        },
+                        "resultMessage": {
+                            "dataType": "Text",
+                            "direction": "out",
+                            "access": "visible"
                         }
+
+                        
 
                     }
                 ]
